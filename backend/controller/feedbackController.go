@@ -16,5 +16,5 @@ func CriaFeedback(c echo.Context) error {
 	}
 	f.ID = bson.NewObjectId()
 	CriaFeedbackBD(f)
-	return c.JSON(http.StatusOK, "Hello, World!")
+	return c.JSON(http.StatusCreated, f)
 }
