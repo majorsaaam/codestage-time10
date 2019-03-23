@@ -2,10 +2,10 @@ package main
 
 import (
 	"log"
-	"net/http"
 
-	"./dao"
 	"github.com/labstack/echo"
+	. "github.com/majorsaaam/codestage-time10/backend/controller"
+	"github.com/majorsaaam/codestage-time10/backend/dao"
 )
 
 func init() {
@@ -17,10 +17,12 @@ func init() {
 	log.Printf("MongoDB connected")
 }
 
+const (
+	URL_API = "/api/v1"
+)
+
 func main() {
 	e := echo.New()
-	e.GET("/", func(c echo.Context) error {
-		return c.String(http.StatusOK, "Hello, World!")
-	})
+	e.POST(URL_API+"/feedback", CriaFeedback)
 	e.Logger.Fatal(e.Start(":1323"))
 }

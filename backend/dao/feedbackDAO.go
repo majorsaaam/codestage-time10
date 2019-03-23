@@ -10,10 +10,10 @@ const (
 	COLLECTION = "Feedback"
 )
 
-func CreateFeedback(f Movie) ([]Movie, error) {
+func CriaFeedbackBD(f *Feedback) error {
 	err := Db.C(COLLECTION).Insert(f)
 	if err != nil {
-		return nil, fmt.Errorf("Error: %v", err)
+		return fmt.Errorf("Error: %v", err)
 	}
-	return nil, err
+	return err
 }
