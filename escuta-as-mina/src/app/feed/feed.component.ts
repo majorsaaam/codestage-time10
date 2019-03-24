@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { PostService } from '../service/feed.service';
-import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
+import { faHeart } from '@fortawesome/free-solid-svg-icons';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,7 @@ import { Router } from '@angular/router';
 export class FeedComponent implements OnInit {
 
   posts: any = null
-  faThumbsUp = faThumbsUp;
+  faThumbsUp = faHeart;
 
   constructor(public service: PostService, private router: Router) { }
 

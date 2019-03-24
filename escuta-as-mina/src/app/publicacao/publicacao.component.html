@@ -6,7 +6,7 @@
         <div class="col-8 mx-auto">
           <div class="form-group">
             <label for="usernamePost">Seu nome para publicação</label>
-            <input type="text" class="form-control" id="usernamePost" aria-describedby="nameHelp">
+            <input type="text" [(ngModel)]="usuario" class="form-control" id="usernamePost" aria-describedby="nameHelp">
             <small id="nameHelp" class="form-text text-muted">Você pode utilizar seu nome real, nome artístico ou um alter ego para ficar anônima. Sinta-se à vontade.</small>
           </div>
         </div>
@@ -15,7 +15,7 @@
         <div class="col-8 mx-auto">
           <div class="form-group">
             <label for="titlePost">Título</label>
-            <input type="text" class="form-control" id="titlePost" aria-describedby="titleHelp">
+            <input type="text" [(ngModel)]="titulo" class="form-control" id="titlePost" aria-describedby="titleHelp">
             <small id="titleHelp" class="form-text text-muted">Nós entendemos obras com títulos "sem título", mas lembre-se que é mais fácil encontrá-las com um texto significativo!</small>
           </div>
         </div>
@@ -34,7 +34,7 @@
       <div class="row">
         <div class="col-8 mx-auto">
           <div class="form-group">
-            <textarea class="form-control" rows="6" placeholder="Copie e cole seu trabalho aqui"></textarea>
+            <textarea class="form-control" [(ngModel)]="postagem" rows="6" placeholder="Copie e cole seu trabalho aqui"></textarea>
           </div>
         </div>
       </div>
@@ -58,7 +58,7 @@
       </div>
       <div class="row">
         <div class="col-10 text-right">
-          <button class="btn btn-lg btn-danger">Publicar!</button>
+          <button class="btn btn-lg btn-danger" (click)="cadastraPost()">Publicar!</button>
         </div>
       </div>
   </div>
