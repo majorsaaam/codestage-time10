@@ -1,14 +1,50 @@
 <div class="container text-light pb-5">
-  <h3 class="mt-4">Dashboard</h3>
+    <div class="page__title--bg mt-4 mb-4"><h3 class="page__title">Dashboard</h3></div>
   <div class="row">
+    <div class="col-2">
+      <ul class="list-group">
+        <li class="list-group-item list-group-item-action list-group-item-light d-flex justify-content-between align-items-center">Top dez <span class="badge badge-danger badge-pill">+2</span></li>
+        <li class="list-group-item list-group-item-action list-group-item-light d-flex justify-content-between align-items-center">Gráficos <span class="badge badge-danger badge-pill"></span></li>
+        <li class="list-group-item list-group-item-action list-group-item-light d-flex justify-content-between align-items-center">Favoritas <span class="badge badge-danger badge-pill">+16</span></li>
+      </ul>
+    </div>
     <div class="col">
-      <div class="card bg-dark">
-        <ul class="list-group">
-          <li class="list-group-item">Top dez</li>
-          <li class="list-group-item">Gráficos</li>
-          <li class="list-group-item">Favoritos</li>
-        </ul>
+      <div class="title--teal--smaller">
+        <h4>Favoritas</h4>
       </div>
+
+      <table class="table table-dark">
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Nome</th>
+            <th scope="col">Habilidades</th>
+            <th scope="col">Curtidas</th>
+            <th scope="col">Estim. Visualizações</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-center">
+              <img src="../../assets/img/woman-natural-looking-makeup.jpg" class="favorito__foto"></td>
+            <td class="my-auto mx-auto">
+              Alessandra Albuquerque</td>
+            <td>
+              Engenheira musical
+            </td>
+            <td class="text-center">
+              92.039
+            </td>
+            <td class="text-center">
+              294.384
+            </td>
+            <td class="text-center">
+              <a href="#"><img src="../../assets/img/external-link-icon-15-256.png" class="icon--external-link"></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </div>
