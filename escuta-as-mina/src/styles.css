@@ -27,3 +27,14 @@ body {
     padding-top: 10px;
     padding-right: 20px;
 }
+.title--teal--bigger {
+    background-color: #009688;
+    border-right: 6px solid #00675b;
+    display: inline-block;
+    margin-bottom: 10px;
+}
+.title--teal--bigger > h3 {
+    color: #ffffff;
+    padding-top: 10px;
+    padding-right: 20px;
+}
