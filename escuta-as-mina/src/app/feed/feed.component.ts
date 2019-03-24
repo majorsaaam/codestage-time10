@@ -23,8 +23,8 @@ export class FeedComponent implements OnInit {
       });
   }
 
-  navigateToPost() {
-    this.router.navigateByUrl('/post');
+  navigateToPost(id: string) {
+    this.router.navigate(['/post', id]);
   }
 
 }

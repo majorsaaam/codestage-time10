@@ -10,7 +10,7 @@ import { FeedComponent } from './feed/feed.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 const rotas: Routes = [
-  { path: 'post', component: PostComponent },
+  { path: 'post/:id', component: PostComponent },
   { path: 'exemploREST', component: ExemploComponent },
   { path: 'feed', component: FeedComponent }
 ]

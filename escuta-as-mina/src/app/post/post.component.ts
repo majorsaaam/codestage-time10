@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { ExemploRestService } from 'src/app/service/exemplo-rest.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-post',
@@ -7,12 +8,15 @@ import { ExemploRestService } from 'src/app/service/exemplo-rest.service';
   styleUrls: ['./post.component.css']
 })
 export class PostComponent implements OnInit {
+  recebePost: any;
   post: any = null;
 
-  constructor(public rest: ExemploRestService) { }
+  constructor(public rest: ExemploRestService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.rest.getPost("5c9726c49ad40a141497528e")
+    let id = this.route.snapshot.paramMap.get('id')
+    console.log(id)
+    this.rest.getPost(id)
       .subscribe(data => {
         this.post = data;
         console.log(this.post);

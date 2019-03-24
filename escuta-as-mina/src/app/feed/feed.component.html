@@ -2,7 +2,7 @@
   <div class="comment">
     <h3 class="mb-4">Feed</h3>
     <div class="comment__person" *ngFor="let p of posts">
-      <div class="row" (click)="navigateToPost()">
+      <div class="row" (click)="navigateToPost(p.id)">
         <div class="col-1">
           <img src="../../assets/img/foto-comment-1.png" alt="">
         </div>
