@@ -34,7 +34,7 @@
 
   <div class="comment">
     <h5 class="mb-4">Avaliações</h5>
-    <div class="comment__person ">
+    <div class="comment__person " *ngFor="let c of comentarios">
       <div class="row">
         <div class="col-1">
           <img src="../../assets/img/foto-comment-1.png" alt="">
@@ -42,18 +42,18 @@
         <div class="col-11 d-flex align-items-center pl-4">
           <div class="comment__comment">
             <span class="comment__name">
-              Letícia Menezes
-            </span>
-            <span class="comment__hability">
-              Compositora e coreógrafa
+              {{c.usuario}}
             </span>
             <p class="comment__text">
-              Incrível letra, bela harmonia do som e palavras. Não poderia ter sido melhor.
+              {{c.comentario}}
             </p>
           </div>
         </div>
+        <br>
       </div>
+      <br>
     </div>
+    <br>
   </div>
   <div class="form-group">
     <label for="exampleFormControlInput1">Nome</label>

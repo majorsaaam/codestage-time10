@@ -39,6 +39,11 @@ export class ExemploRestService {
     );
   }
 
+  getFeedback(id): Observable<any> {
+    return this.http.get(endpoint + 'feedbacks/' + id).pipe(
+      map(this.extractData));
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

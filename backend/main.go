@@ -24,6 +24,7 @@ const (
 func main() {
 	e := echo.New()
 
+	e.GET(URL_API+"/feedbacks/:id", GetFeedback)
 	e.POST(URL_API+"/feedbacks", CriaFeedback)
 	e.PUT(URL_API+"/feedbacks/adicionaCurtida/:id", AdicionaCurtidaFeedback)
 	e.PUT(URL_API+"/feedbacks/adicionaCurtidaAutor/:id", AdicionaCurtidaAutorFeedback)

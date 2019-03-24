@@ -13,6 +13,7 @@ export class PostComponent implements OnInit {
   post: any = null;
   usuario: string = '';
   comentario: string = '';
+  comentarios: any[] = [];
 
   constructor(public rest: ExemploRestService,
               private route: ActivatedRoute) { }
@@ -23,7 +24,12 @@ export class PostComponent implements OnInit {
     this.rest.getPost(id)
       .subscribe(data => {
         this.post = data;
-        console.log(this.post);
+        this.post.ids_feedbacks.forEach(element => {
+          this.rest.getFeedback(element).subscribe(data => {
+            console.log(data)
+            this.comentarios.push(data);
+          });
+        });
     });
   }
 
