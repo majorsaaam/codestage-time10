@@ -37,6 +37,12 @@ export class PostComponent implements OnInit {
     return str.replace (/\;/g,`\n`);
   }
 
+  curtirPost() {
+    this.rest.curtidaPost(this.post.id).subscribe(data => {
+      console.log(data);
+    });
+  }
+
   onComment() {
     let feedback: any = {
       idPost: this.post.id,
