@@ -9,6 +9,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { FeedComponent } from './feed/feed.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { TooltipModule } from 'ngx-bootstrap/tooltip';
 
 const rotas: Routes = [
   { path: 'post/:id', component: PostComponent },
@@ -29,6 +30,7 @@ const rotas: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot( rotas ),
+    TooltipModule.forRoot(),
     HttpClientModule  ,
     FontAwesomeModule
   ],
