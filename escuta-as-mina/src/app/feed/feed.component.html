@@ -4,15 +4,15 @@
     <div class="col-8">
       <div class="feed__details">
         <span class="feed__name">
-          Silvia Araujo Gomez
+          {{post.usuario}}
         </span>
         <span class="feed__hability">
-          Compositora, cantora e violonista
+          {{post.habilidades}}
         </span>
         <p class="feed__presentation">
-          apresenta 
+          apresenta
           <span class="feed__presentation--title">
-            Letra: Canto das Três Raças
+            {{post.tipo_postagem}}: {{post.titulo}}
           </span>
         </p>
       </div>
@@ -95,7 +95,7 @@
     </pre>
 
     <div class="work__tags">
-      Tags: <a href="#">MPB</a>
+      <!-- Tags: <a *ngFor="let tag of post.tags" href="#">{{tag}}</a> -->
     </div>
   </div>
 
