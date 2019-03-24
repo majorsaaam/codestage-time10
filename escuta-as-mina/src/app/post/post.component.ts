@@ -22,4 +22,9 @@ export class PostComponent implements OnInit {
         console.log(this.post);
     });
   }
+
+  addNewLines (str) { 
+    return str.replace (/\;/g,`\n`);
+    //return str.replace (/(?!$|\n)([^\n]{50}(?!\n))/g, '$1\n');
+}
 }
