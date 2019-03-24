@@ -17,6 +17,14 @@
 .comment {
     margin: 50px 0 0 140px;
 }
-.feed__details, .comment__name, .comment__hability {
+.post__details, .comment__name, .comment__hability {
     font-family: 'Open Sans', sans-serif;
+}
+.post__curtidas {
+    text-align: center;
+}
+.post__curtidas--numero {
+    font-weight: bold;
+    display: inline;
+    margin-right: 20px;
 }

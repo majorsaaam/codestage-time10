@@ -2,24 +2,23 @@
   <div class="row mt-4 d-flex align-items-center">
     <div class="col-2"><img src="../../assets/img/woman-pic.png" alt=""></div>
     <div class="col-8">
-      <div class="feed__details">
-        <span class="feed__name">
+      <div class="post__details">
+        <span class="post__name">
           {{post.usuario}}
         </span>
-        <span class="feed__hability">
+        <span class="post__hability">
           {{post.habilidades}}
         </span>
-        <p class="feed__presentation">
+        <p class="post__presentation">
           apresenta
-          <span class="feed__presentation--title">
+          <span class="post__presentation--title">
             {{post.tipo_postagem}}: {{post.titulo}}
           </span>
         </p>
       </div>
     </div>
-    <div class="col-2">
-      UP<br>
-      DOWN
+    <div class="col-2 post__curtidas">
+      <div class="post__curtidas--numero">{{post.curtidas}}</div> <img src="../../assets/img/love.png">
     </div>
   </div>
 
