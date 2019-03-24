@@ -1,0 +1,30 @@
+<div class="container text-light pb-5">
+  <div class="comment">
+    <h3 class="mb-4">Feed</h3>
+    <div class="comment__person" *ngFor="let p of posts">
+      <div class="row" (click)="navigateToPost(p.id)">
+        <div class="col-1">
+          <img src="../../assets/img/foto-comment-1.png" alt="">
+        </div>
+        <div class="col-11 d-flex align-items-center pl-4">
+          <div class="comment__comment">
+            <span class="comment__name" style="font-weight: bold;">
+              {{p.usuario}}
+            </span>
+            <span class="comment__hability" *ngFor="let h of p.habilidades" style="font-style: italic;">
+              {{h}}
+            </span>
+            <p class="comment__text">
+              {{p.postagem}}
+            </p>
+            <span>
+              <fa-icon [icon]="faThumbsUp"></fa-icon>
+              {{p.curtidas}}
+            </span>
+          </div>
+        </div>
+      </div>
+      <br>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.comment {
+    margin: 50px 0 0 140px;
+}
+
+p {
+    max-width: 80ch;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
