@@ -11,13 +11,17 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { PublicacaoComponent } from './publicacao/publicacao.component';
+import { FormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
 
 const rotas: Routes = [
+  { path: 'home', component: HomeComponent },
   { path: 'post/:id', component: PostComponent },
   { path: 'exemploREST', component: ExemploComponent },
   { path: 'feed', component: FeedComponent },
   { path: 'dashboard', component: DashboardComponent },
-  { path: 'publicacao', component: PublicacaoComponent }
+  { path: 'publicacao', component: PublicacaoComponent },
+  { path: '', redirectTo: 'home', pathMatch: 'full' }
 ]
 
 @NgModule({
@@ -27,7 +31,8 @@ const rotas: Routes = [
     ExemploComponent,
     FeedComponent,
     DashboardComponent,
-    PublicacaoComponent
+    PublicacaoComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
@@ -35,7 +40,8 @@ const rotas: Routes = [
     RouterModule.forRoot( rotas ),
     TooltipModule.forRoot(),
     HttpClientModule  ,
-    FontAwesomeModule
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -25,6 +25,15 @@ func CriaFeedback(c echo.Context) error {
 	return c.JSON(http.StatusCreated, f)
 }
 
+func GetFeedback(c echo.Context) error {
+	id := c.Param("id")
+	f, err := GetFeedBackByIDBD(id)
+	if err != nil {
+		return err
+	}
+	return c.JSON(http.StatusOK, f)
+}
+
 func AdicionaCurtidaFeedback(c echo.Context) error {
 	id := c.Param("id")
 	f, err := GetFeedbackByIDBD(id)

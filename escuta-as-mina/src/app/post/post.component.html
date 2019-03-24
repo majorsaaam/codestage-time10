@@ -17,80 +17,14 @@
         </p>
       </div>
     </div>
-    <div class="col-2 post__curtidas">
+    <div class="col-2 post__curtidas" (click)="curtirPost()">
       <div class="post__curtidas--numero">{{post.curtidas}}</div> <img src="../../assets/img/love.png">
     </div>
   </div>
 
   <div class="work__text">
     <pre>
-        Ninguém ouviu
-        Um soluçar de dor
-        No canto do Brasil
-        Um lamento triste sempre ecoou
-        Desde que o índio guerreiro
-        Foi pro cativeiro e de lá cantou
-        Negro entoou
-        Um canto de revolta pelos ares
-        Do Quilombo dos Palmares
-        Onde se refugiou
-        Fora a luta dos Inconfidentes
-        Pela quebra das correntes
-        Nada adiantou
-        E de guerra em paz
-        De paz em guerra
-        Todo o povo dessa terra
-        Quando pode cantar
-        Canta de dor
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        E ecoa noite e dia
-        É ensurdecedor
-        Ai, mas que agonia
-        O canto do trabalhador
-        Esse canto que devia
-        Ser um canto de alegria
-        Soa apenas como um soluçar de dor
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-
-        Ninguém ouviu
-        Um soluçar de dor
-        No canto do Brasil
-        Um lamento triste sempre ecoou
-        Desde que o índio guerreiro
-        Foi pro cativeiro e de lá cantou
-        Negro entoou
-        Um canto de revolta pelos ares
-        Do Quilombo dos Palmares
-        Onde se refugiou
-        Fora a luta dos Inconfidentes
-        Pela quebra das correntes
-        Nada adiantou
-        E de guerra em paz
-        De paz em guerra
-        Todo o povo dessa terra
-        Quando pode cantar
-        Canta de dor
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        E ecoa noite e dia
-        É ensurdecedor
-        Ai, mas que agonia
-        O canto do trabalhador
-        Esse canto que devia
-        Ser um canto de alegria
-        Soa apenas como um soluçar de dor
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
+        {{addNewLines(post.postagem)}}
     </pre>
 
     <div class="work__tags">
@@ -100,7 +34,7 @@
 
   <div class="comment">
     <h5 class="mb-4">Avaliações</h5>
-    <div class="comment__person ">
+    <div class="comment__person " *ngFor="let c of comentarios">
       <div class="row">
         <div class="col-1">
           <img src="../../assets/img/foto-comment-1.png" alt="">
@@ -108,17 +42,32 @@
         <div class="col-11 d-flex align-items-center pl-4">
           <div class="comment__comment">
             <span class="comment__name">
-              Letícia Menezes
-            </span>
-            <span class="comment__hability">
-              Compositora e coreógrafa
+              {{c.usuario}}
             </span>
             <p class="comment__text">
-              Incrível letra, bela harmonia do som e palavras. Não poderia ter sido melhor.
+              {{c.comentario}}
             </p>
+            <span (click)="curtirFeedBack(c.id)">
+              <fa-icon [icon]="faThumbsUp"></fa-icon>
+              {{c.avaliacao_fas}}
+            </span>
           </div>
         </div>
+        <br>
       </div>
+      <br>
     </div>
+    <br>
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Nome</label>
+    <input [(ngModel)]="usuario" #ctrl="ngModel" type="text" class="form-control" id="nome" placeholder="Luciana Almeida">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Comentário</label>
+    <textarea  [(ngModel)]="comentario" class="form-control" id="comentário" rows="3"></textarea>
+  </div>
+  <div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary btn-lg" (click)="onComment()">Comentar</button>
   </div>
 </div>

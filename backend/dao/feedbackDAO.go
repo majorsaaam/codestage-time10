@@ -20,6 +20,15 @@ func GetFeedbackByIDBD(id string) (Feedback, error) {
 	return f, err
 }
 
+func GetFeedBackByIDBD(id string) (Feedback, error) {
+	var f Feedback
+	err := Db.C(FEEDBACK_COLLECTION).FindId(bson.ObjectIdHex(id)).One(&f)
+	if err != nil {
+		return f, fmt.Errorf("Error: %v", err)
+	}
+	return f, err
+}
+
 func CriaFeedbackBD(f *Feedback) error {
 	err := Db.C(FEEDBACK_COLLECTION).Insert(f)
 	if err != nil {
