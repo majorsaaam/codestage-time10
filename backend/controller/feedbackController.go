@@ -15,6 +15,12 @@ func CriaFeedback(c echo.Context) error {
 		return err
 	}
 	f.ID = bson.NewObjectId()
+	p, err := GetPostByIDBD(f.IDPost.Hex())
+	if err != nil {
+		return err
+	}
+	p.IDFeedbacks = append(p.IDFeedbacks, f.ID)
 	CriaFeedbackBD(f)
+	AtualizaPostByIDBD(p.ID.Hex(), &p)
 	return c.JSON(http.StatusCreated, f)
 }
