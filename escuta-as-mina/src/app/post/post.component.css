@@ -1,0 +1,30 @@
+.work__text {
+    margin: 20px 80px;
+}
+.work__text > pre {
+    color: #ffffff;
+    height: 300px;
+    overflow-y: scroll;
+}
+.work__tags { 
+    margin: 0 60px;
+    color: #a0a0a0;
+}
+.work__tags > a {
+    color: #ffffff;
+    text-decoration: underline;
+}
+.comment {
+    margin: 50px 0 0 140px;
+}
+.post__details, .comment__name, .comment__hability {
+    font-family: 'Open Sans', sans-serif;
+}
+.post__curtidas {
+    text-align: center;
+}
+.post__curtidas--numero {
+    font-weight: bold;
+    display: inline;
+    margin-right: 20px;
+}

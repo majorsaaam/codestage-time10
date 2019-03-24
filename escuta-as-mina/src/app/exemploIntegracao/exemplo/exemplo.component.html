@@ -1,0 +1,18 @@
+<h1>Exemplo Get por ID</h1>
+<p>ID: {{post.id}}</p>
+<p>Usuario: {{post.usuario}}</p>
+<p>Postagem{{post.postagem}}</p>
+<p>etc...</p>
+
+<h1>Exemplo Get ALL posts</h1>
+<div *ngFor="let p of posts; let i = index">
+  <p>Index: {{i}}</p>
+  <p>ID: {{p.id}}</p>
+  <p>Usuario: {{p.usuario}}</p>
+  <p>Postagem{{p.postagem}}</p>
+  <div *ngFor="let id of p?.ids_feedbacks; let j = index">
+    <p>ID POST {{j}}: {{id}}</p>
+  </div>
+  <p>etc...</p>
+  <br>
+</div>

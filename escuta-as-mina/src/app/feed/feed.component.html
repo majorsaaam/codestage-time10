@@ -1,125 +1,30 @@
 <div class="container text-light pb-5">
-  <div class="row mt-4 d-flex align-items-center">
-    <div class="col-2"><img src="../../assets/img/woman-pic.png" alt=""></div>
-    <div class="col-8">
-      <div class="feed__details">
-        <span class="feed__name">
-          Silvia Araujo Gomez
-        </span>
-        <span class="feed__hability">
-          Compositora, cantora e violonista
-        </span>
-        <p class="feed__presentation">
-          apresenta 
-          <span class="feed__presentation--title">
-            Letra: Canto das Três Raças
-          </span>
-        </p>
-      </div>
-    </div>
-    <div class="col-2">
-      UP<br>
-      DOWN
-    </div>
-  </div>
-
-  <div class="work__text">
-    <pre>
-        Ninguém ouviu
-        Um soluçar de dor
-        No canto do Brasil
-        Um lamento triste sempre ecoou
-        Desde que o índio guerreiro
-        Foi pro cativeiro e de lá cantou
-        Negro entoou
-        Um canto de revolta pelos ares
-        Do Quilombo dos Palmares
-        Onde se refugiou
-        Fora a luta dos Inconfidentes
-        Pela quebra das correntes
-        Nada adiantou
-        E de guerra em paz
-        De paz em guerra
-        Todo o povo dessa terra
-        Quando pode cantar
-        Canta de dor
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        E ecoa noite e dia
-        É ensurdecedor
-        Ai, mas que agonia
-        O canto do trabalhador
-        Esse canto que devia
-        Ser um canto de alegria
-        Soa apenas como um soluçar de dor
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-
-        Ninguém ouviu
-        Um soluçar de dor
-        No canto do Brasil
-        Um lamento triste sempre ecoou
-        Desde que o índio guerreiro
-        Foi pro cativeiro e de lá cantou
-        Negro entoou
-        Um canto de revolta pelos ares
-        Do Quilombo dos Palmares
-        Onde se refugiou
-        Fora a luta dos Inconfidentes
-        Pela quebra das correntes
-        Nada adiantou
-        E de guerra em paz
-        De paz em guerra
-        Todo o povo dessa terra
-        Quando pode cantar
-        Canta de dor
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        E ecoa noite e dia
-        É ensurdecedor
-        Ai, mas que agonia
-        O canto do trabalhador
-        Esse canto que devia
-        Ser um canto de alegria
-        Soa apenas como um soluçar de dor
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-        ô, ô, ô, ô, ô, ô
-    </pre>
-
-    <div class="work__tags">
-      Tags: <a href="#">MPB</a>
-    </div>
-  </div>
-
   <div class="comment">
-    <h5 class="mb-4">Avaliações</h5>
-    <div class="comment__person ">
-      <div class="row">
+    <h3 class="mb-4">Feed</h3>
+    <div class="comment__person" *ngFor="let p of posts">
+      <div class="row" (click)="navigateToPost(p.id)">
         <div class="col-1">
           <img src="../../assets/img/foto-comment-1.png" alt="">
         </div>
         <div class="col-11 d-flex align-items-center pl-4">
           <div class="comment__comment">
-            <span class="comment__name">
-              Letícia Menezes
+            <span class="comment__name" style="font-weight: bold;">
+              {{p.usuario}}
             </span>
-            <span class="comment__hability">
-              Compositora e coreógrafa
+            <span class="comment__hability" *ngFor="let h of p.habilidades" style="font-style: italic;">
+              {{h}}
             </span>
             <p class="comment__text">
-              Incrível letra, bela harmonia do som e palavras. Não poderia ter sido melhor.
+              {{p.postagem}}
             </p>
+            <span>
+              <fa-icon [icon]="faThumbsUp"></fa-icon>
+              {{p.curtidas}}
+            </span>
           </div>
         </div>
       </div>
+      <br>
     </div>
   </div>
 </div>
