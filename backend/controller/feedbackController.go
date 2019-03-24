@@ -35,3 +35,14 @@ func AdicionaCurtidaFeedback(c echo.Context) error {
 	AtualizaFeedbackByIDBD(id, &f)
 	return c.JSON(http.StatusOK, f)
 }
+
+func AdicionaCurtidaAutorFeedback(c echo.Context) error {
+	id := c.Param("id")
+	f, err := GetFeedbackByIDBD(id)
+	if err != nil {
+		return err
+	}
+	f.AvaliacaoAutor = !f.AvaliacaoAutor
+	AtualizaFeedbackByIDBD(id, &f)
+	return c.JSON(http.StatusOK, f)
+}
