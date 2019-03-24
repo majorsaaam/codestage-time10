@@ -8,7 +8,8 @@ import { ExemploComponent } from './exemploIntegracao/exemplo/exemplo.component'
 import { HttpClientModule } from '@angular/common/http';
 
 const rotas: Routes = [
-  { path: 'feed', component: FeedComponent }
+  { path: 'feed', component: FeedComponent },
+  { path: 'exemploREST', component: ExemploComponent }
 ]
 
 @NgModule({
@@ -20,7 +21,9 @@ const rotas: Routes = [
   imports: [
     BrowserModule,
     AppRoutingModule,
-    RouterModule.forRoot( rotas )    HttpClientModule  ],
+    RouterModule.forRoot( rotas ),
+    HttpClientModule  
+  ],
   providers: [],
   bootstrap: [AppComponent]
 })

@@ -28,7 +28,7 @@ export class ExemploRestService {
   }
 
   getPosts(): Observable<any> {
-    return this.http.get(endpoint + 'posts/').pipe(
+    return this.http.get(endpoint + 'posts').pipe(
       map(this.extractData));
   }
 
