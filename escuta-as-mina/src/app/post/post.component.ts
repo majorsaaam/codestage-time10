@@ -2,11 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { ExemploRestService } from 'src/app/service/exemplo-rest.service';
 
 @Component({
-  selector: 'app-feed',
-  templateUrl: './feed.component.html',
-  styleUrls: ['./feed.component.css']
+  selector: 'app-post',
+  templateUrl: './post.component.html',
+  styleUrls: ['./post.component.css']
 })
-export class FeedComponent implements OnInit {
+export class PostComponent implements OnInit {
   post: any = null;
 
   constructor(public rest: ExemploRestService) { }
@@ -16,7 +16,6 @@ export class FeedComponent implements OnInit {
       .subscribe(data => {
         this.post = data;
         console.log(this.post);
-        
     });
   }
 }
