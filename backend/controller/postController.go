@@ -27,3 +27,11 @@ func GetPost(c echo.Context) error {
 	}
 	return c.JSON(http.StatusOK, p)
 }
+
+func GetAllPost(c echo.Context) error {
+	p, err := GetAllPostBD()
+	if err != nil {
+		return err
+	}
+	return c.JSON(http.StatusOK, p)
+}

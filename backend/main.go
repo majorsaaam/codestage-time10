@@ -24,10 +24,11 @@ const (
 func main() {
 	e := echo.New()
 
-	e.POST(URL_API+"/feedback", CriaFeedback)
+	e.POST(URL_API+"/feedbacks", CriaFeedback)
 
-	e.POST(URL_API+"/post", CriaPost)
-	e.GET(URL_API+"/post/:id", GetPost)
+	e.POST(URL_API+"/posts", CriaPost)
+	e.GET(URL_API+"/posts", GetAllPost)
+	e.GET(URL_API+"/posts/:id", GetPost)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }

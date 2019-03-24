@@ -23,7 +23,7 @@ func GetPostByIDBD(id string) (Post, error) {
 
 func GetAllPostBD() ([]Post, error) {
 	var posts []Post
-	err := Db.C(POST_COLLECTION).Find(bson.M{}).All(posts)
+	err := Db.C(POST_COLLECTION).Find(bson.M{}).All(&posts)
 	if err != nil {
 		return posts, fmt.Errorf("Error: %v", err)
 	}
