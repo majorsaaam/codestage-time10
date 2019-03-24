@@ -35,3 +35,14 @@ func GetAllPost(c echo.Context) error {
 	}
 	return c.JSON(http.StatusOK, p)
 }
+
+func AdicionaCurtidaPost(c echo.Context) error {
+	id := c.Param("id")
+	p, err := GetPostByIDBD(id)
+	if err != nil {
+		return err
+	}
+	p.Curtidas += 1
+	AtualizaPostByIDBD(id, &p)
+	return c.JSON(http.StatusOK, p)
+}

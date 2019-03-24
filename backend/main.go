@@ -25,10 +25,12 @@ func main() {
 	e := echo.New()
 
 	e.POST(URL_API+"/feedbacks", CriaFeedback)
+	e.PUT(URL_API+"/feedbacks/adicionaCurtida/:id", AdicionaCurtidaFeedback)
 
 	e.POST(URL_API+"/posts", CriaPost)
 	e.GET(URL_API+"/posts", GetAllPost)
 	e.GET(URL_API+"/posts/:id", GetPost)
+	e.PUT(URL_API+"/posts/adicionaCurtida/:id", AdicionaCurtidaPost)
 
 	e.Logger.Fatal(e.Start(":1323"))
 }

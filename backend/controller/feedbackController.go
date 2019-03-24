@@ -24,3 +24,14 @@ func CriaFeedback(c echo.Context) error {
 	AtualizaPostByIDBD(p.ID.Hex(), &p)
 	return c.JSON(http.StatusCreated, f)
 }
+
+func AdicionaCurtidaFeedback(c echo.Context) error {
+	id := c.Param("id")
+	f, err := GetFeedbackByIDBD(id)
+	if err != nil {
+		return err
+	}
+	f.AvaliacaoFas += 1
+	AtualizaFeedbackByIDBD(id, &f)
+	return c.JSON(http.StatusOK, f)
+}
