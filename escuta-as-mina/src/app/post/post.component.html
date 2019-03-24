@@ -18,7 +18,7 @@
       </div>
     </div>
     <div class="col-2 post__curtidas" (click)="curtirPost()">
-      <div class="post__curtidas--numero">{{post.curtidas}}</div> <img src="../../assets/img/love.png">
+      <div class="post__curtidas--numero" >{{post.curtidas}}</div> <img src="../../assets/img/love.png">
     </div>
   </div>
 
@@ -47,7 +47,7 @@
             <p class="comment__text">
               {{c.comentario}}
             </p>
-            <span (click)="curtirFeedBack(c.id)">
+            <span (click)="curtirFeedBack(c)">
               <fa-icon [icon]="faThumbsUp"></fa-icon>
               {{c.avaliacao_fas}}
             </span>
