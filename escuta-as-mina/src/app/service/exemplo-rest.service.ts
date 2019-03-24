@@ -39,6 +39,13 @@ export class ExemploRestService {
     );
   }
 
+  curtidaFeed(id): Observable<any> {
+    return this.http.put<any>(endpoint + '/feedbacks/adicionaCurtida/' + id, JSON.stringify({}), httpOptions).pipe(
+      tap((feedback) => console.log(`updated feedback w/ id=${feedback.id}`)),
+      catchError(this.handleError<any>('addFeedback'))
+    );
+  }
+
   addFeedback(feedback): Observable<any> {
     return this.http.post<any>(endpoint + 'feedbacks', JSON.stringify(feedback), httpOptions).pipe(
       tap((feedback) => console.log(`added feedback w/ id=${feedback.id}`)),

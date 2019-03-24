@@ -47,6 +47,10 @@
             <p class="comment__text">
               {{c.comentario}}
             </p>
+            <span (click)="curtirFeedBack(c.id)">
+              <fa-icon [icon]="faThumbsUp"></fa-icon>
+              {{c.avaliacao_fas}}
+            </span>
           </div>
         </div>
         <br>

@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ExemploRestService } from 'src/app/service/exemplo-rest.service';
 import { ActivatedRoute } from '@angular/router';
-import { FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { faThumbsUp } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-post',
@@ -14,6 +14,7 @@ export class PostComponent implements OnInit {
   usuario: string = '';
   comentario: string = '';
   comentarios: any[] = [];
+  faThumbsUp = faThumbsUp;
 
   constructor(public rest: ExemploRestService,
               private route: ActivatedRoute) { }
@@ -39,6 +40,12 @@ export class PostComponent implements OnInit {
 
   curtirPost() {
     this.rest.curtidaPost(this.post.id).subscribe(data => {
+      console.log(data);
+    });
+  }
+
+  curtirFeedBack(id) {
+    this.rest.curtidaFeed(id).subscribe(data => {
       console.log(data);
     });
   }
