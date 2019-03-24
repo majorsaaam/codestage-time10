@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/majorsaaam/codestage-time10/issues"
   },
-  "homepage": "https://github.com/majorsaaam/codestage-time10#readme"
+  "homepage": "https://github.com/majorsaaam/codestage-time10#readme",
+  "dependencies": {
+    "ngx-bootstrap": "^3.2.0"
+  }
 }

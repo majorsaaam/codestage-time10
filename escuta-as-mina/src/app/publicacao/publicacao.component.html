@@ -1,0 +1,65 @@
+<div class="container text-light pb-5">
+  <div class="page__title--bg mt-4 mb-4"><h3 class="page__title">Publique</h3></div>
+  <div class="container">
+    
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <div class="form-group">
+            <label for="usernamePost">Seu nome para publicação</label>
+            <input type="text" class="form-control" id="usernamePost" aria-describedby="nameHelp">
+            <small id="nameHelp" class="form-text text-muted">Você pode utilizar seu nome real, nome artístico ou um alter ego para ficar anônima. Sinta-se à vontade.</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <div class="form-group">
+            <label for="titlePost">Título</label>
+            <input type="text" class="form-control" id="titlePost" aria-describedby="titleHelp">
+            <small id="titleHelp" class="form-text text-muted">Nós entendemos obras com títulos "sem título", mas lembre-se que é mais fácil encontrá-las com um texto significativo!</small>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <div class="form-group">
+            <label for="format">Formato</label><br>
+            <div *ngFor="let tipo of tipos" class="custom-control custom-radio custom-control-inline">
+              <input #{{tipo.tipo}} type="radio" [id]="tipo.tipo" name="tipoPost" class="custom-control-input" [checked]="tipo.checked">
+              <label class="custom-control-label tipo--titulo" [for]="tipo.tipo">{{tipo.str}}</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <div class="form-group">
+            <textarea class="form-control" rows="6" placeholder="Copie e cole seu trabalho aqui"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-8 mx-auto">
+          <div class="form-group">
+            <label for="genres">Gêneros</label>
+            <select aria-describedby="genreHelp" multiple class="form-control" id="genres">
+              <option value="sertanejo">Sertanejo</option>
+              <option value="Funk">Funk</option>
+              <option value="classico">Música clássica</option>
+              <option value="experimental">Experimental</option>
+              <option value="rock">Rock</option>
+              <option value="axe">Axé</option>
+              <option value="metal">Metal</option>
+              <option value="-1">...</option>
+            </select>
+            <small id="genreHelp" class="form-text text-muted">Você precisa selecionar pelo menos um estilo.</small>  
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-10 text-right">
+          <button class="btn btn-lg btn-danger">Publicar!</button>
+        </div>
+      </div>
+  </div>
+</div>

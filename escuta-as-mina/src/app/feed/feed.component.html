@@ -1,6 +1,6 @@
 <div class="container text-light pb-5">
+  <div class="page__title--bg mt-4 mb-4"><h3 class="page__title">Feed</h3></div>
   <div class="comment">
-    <h3 class="mb-4">Feed</h3>
     <div class="comment__person" *ngFor="let p of posts">
       <div class="row" (click)="navigateToPost(p.id)">
         <div class="col-1">
@@ -18,7 +18,8 @@
               {{p.postagem}}
             </p>
             <span>
-              <fa-icon [icon]="faThumbsUp"></fa-icon>
+              <!-- <fa-icon [icon]="faThumbsUp"></fa-icon> -->
+              <img src="../../assets/img/love.png" width="20">
               {{p.curtidas}}
             </span>
           </div>

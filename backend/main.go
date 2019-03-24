@@ -9,7 +9,7 @@ import (
 )
 
 func init() {
-	c := dao.ConnectData{Server: "localhost:27017", Database: "CODESTAGE"}
+	c := dao.ConnectData{Server: "127.0.0.1:27017", Database: "CODESTAGE"}
 	_, err := c.Connect()
 	if err != nil {
 		log.Fatal(err)
