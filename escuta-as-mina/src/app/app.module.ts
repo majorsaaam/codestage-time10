@@ -8,6 +8,7 @@ import { ExemploComponent } from './exemploIntegracao/exemplo/exemplo.component'
 import { HttpClientModule } from '@angular/common/http';
 import { FeedComponent } from './feed/feed.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { FormsModule } from '@angular/forms';
 
 const rotas: Routes = [
   { path: 'post/:id', component: PostComponent },
@@ -26,8 +27,9 @@ const rotas: Routes = [
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot( rotas ),
-    HttpClientModule  ,
-    FontAwesomeModule
+    HttpClientModule,
+    FontAwesomeModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

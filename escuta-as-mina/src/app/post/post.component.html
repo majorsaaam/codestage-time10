@@ -55,4 +55,15 @@
       </div>
     </div>
   </div>
+  <div class="form-group">
+    <label for="exampleFormControlInput1">Nome</label>
+    <input [(ngModel)]="usuario" #ctrl="ngModel" type="text" class="form-control" id="nome" placeholder="Luciana Almeida">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Comentário</label>
+    <textarea  [(ngModel)]="comentario" class="form-control" id="comentário" rows="3"></textarea>
+  </div>
+  <div class="d-flex justify-content-end">
+    <button type="button" class="btn btn-primary btn-lg" (click)="onComment()">Comentar</button>
+  </div>
 </div>

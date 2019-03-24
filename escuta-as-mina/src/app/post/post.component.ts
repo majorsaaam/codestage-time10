@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { ExemploRestService } from 'src/app/service/exemplo-rest.service';
 import { ActivatedRoute } from '@angular/router';
+import { FormGroup, Validators, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-post',
@@ -10,8 +11,11 @@ import { ActivatedRoute } from '@angular/router';
 export class PostComponent implements OnInit {
   recebePost: any;
   post: any = null;
+  usuario: string = '';
+  comentario: string = '';
 
-  constructor(public rest: ExemploRestService, private route: ActivatedRoute) { }
+  constructor(public rest: ExemploRestService,
+              private route: ActivatedRoute) { }
 
   ngOnInit() {
     let id = this.route.snapshot.paramMap.get('id')
@@ -25,6 +29,20 @@ export class PostComponent implements OnInit {
 
   addNewLines (str) { 
     return str.replace (/\;/g,`\n`);
-    //return str.replace (/(?!$|\n)([^\n]{50}(?!\n))/g, '$1\n');
-}
+  }
+
+  onComment() {
+    let feedback: any = {
+      idPost: this.post.id,
+      usuario: this.usuario,
+      comentario: this.comentario,
+      avaliacao_autor: false,
+      avaliacao_fas: 0
+    }
+    this.rest.addFeedback(feedback).subscribe(result => {
+      console.log(result);
+    });
+    this.usuario = '';
+    this.comentario = '';
+  }
 }
