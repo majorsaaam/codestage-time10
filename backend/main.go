@@ -24,5 +24,6 @@ const (
 func main() {
 	e := echo.New()
 	e.POST(URL_API+"/feedback", CriaFeedback)
+	e.POST(URL_API+"/post", CriaPost)
 	e.Logger.Fatal(e.Start(":1323"))
 }

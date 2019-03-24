@@ -7,11 +7,11 @@ import (
 )
 
 const (
-	COLLECTION = "Feedback"
+	FEEDBACK_COLLECTION = "Feedback"
 )
 
 func CriaFeedbackBD(f *Feedback) error {
-	err := Db.C(COLLECTION).Insert(f)
+	err := Db.C(FEEDBACK_COLLECTION).Insert(f)
 	if err != nil {
 		return fmt.Errorf("Error: %v", err)
 	}
