@@ -13,6 +13,7 @@ import { TooltipModule } from 'ngx-bootstrap/tooltip';
 import { PublicacaoComponent } from './publicacao/publicacao.component';
 import { FormsModule } from '@angular/forms';
 import { HomeComponent } from './home/home.component';
+import { BlogComponent } from './blog/blog.component';
 
 const rotas: Routes = [
   { path: 'home', component: HomeComponent },
@@ -21,6 +22,7 @@ const rotas: Routes = [
   { path: 'feed', component: FeedComponent },
   { path: 'dashboard', component: DashboardComponent },
   { path: 'publicacao', component: PublicacaoComponent },
+  { path: 'blog', component: BlogComponent },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ]
 
@@ -32,7 +34,8 @@ const rotas: Routes = [
     FeedComponent,
     DashboardComponent,
     PublicacaoComponent,
-    HomeComponent
+    HomeComponent,
+    BlogComponent
   ],
   imports: [
     BrowserModule,
