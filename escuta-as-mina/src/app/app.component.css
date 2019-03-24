@@ -5,6 +5,12 @@
 .navbar-brand--logo {
     width: 200px;
 }
+.bg-coral {
+    background-color: #c63f17;
+}
+.bg-coral > a {
+    color: #ffffff !important;
+}
 footer {
     background-color: #009688 !important;
     text-align: center;
