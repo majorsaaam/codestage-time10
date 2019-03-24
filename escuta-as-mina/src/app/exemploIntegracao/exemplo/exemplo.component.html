@@ -10,6 +10,9 @@
   <p>ID: {{p.id}}</p>
   <p>Usuario: {{p.usuario}}</p>
   <p>Postagem{{p.postagem}}</p>
+  <div *ngFor="let id of p?.ids_feedbacks; let j = index">
+    <p>ID POST {{j}}: {{id}}</p>
+  </div>
   <p>etc...</p>
   <br>
 </div>

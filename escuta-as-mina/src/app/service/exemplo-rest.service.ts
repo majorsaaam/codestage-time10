@@ -32,6 +32,13 @@ export class ExemploRestService {
       map(this.extractData));
   }
 
+  addFeedback(feedback): Observable<any> {
+    return this.http.post<any>(endpoint + 'feedbacks', JSON.stringify(feedback), httpOptions).pipe(
+      tap((feedback) => console.log(`added feedback w/ id=${feedback.id}`)),
+      catchError(this.handleError<any>('addFeedback'))
+    );
+  }
+
   private handleError<T> (operation = 'operation', result?: T) {
     return (error: any): Observable<T> => {
       console.error(error);

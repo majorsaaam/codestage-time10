@@ -11,6 +11,14 @@ export class ExemploComponent implements OnInit {
   post: any = null;
   posts: any = null;
 
+  feedback: any = {
+    idPost: "5c96d3c7178d0530ec337cb9", //Esse ID é o do post.id
+    usuario: "Eduardo",
+    comentario: "Esse cara é de mais!!!",
+    avaliacao_autor: false,
+    avaliacao_fas: 0
+  }
+
   constructor(public rest: ExemploRestService) { }
 
   ngOnInit() {
@@ -19,10 +27,17 @@ export class ExemploComponent implements OnInit {
       .subscribe(data => {
         this.post = data;
       });
+    
     this.rest.getPosts()
       .subscribe(data => {
         this.posts = data;
     })
+
+    //adiciona feedback/comentario
+    // OBS: esta colocando na tabela sempre que entra na pagina kkk
+    this.rest.addFeedback(this.feedback).subscribe(result => {
+      console.log(result);
+    });
   }
 
 }
