@@ -16,5 +16,14 @@ func CriaPost(c echo.Context) error {
 	}
 	p.ID = bson.NewObjectId()
 	CriaPostBD(p)
-	return c.JSON(http.StatusCreated, p)
+	return c.JSON(http.StatusCreated, nil)
+}
+
+func GetPost(c echo.Context) error {
+	id := c.Param("id")
+	p, err := GetPostByIDBD(id)
+	if err != nil {
+		return err
+	}
+	return c.JSON(http.StatusOK, p)
 }
