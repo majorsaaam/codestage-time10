@@ -1,0 +1,19 @@
+{
+  "name": "escuta-as-mina",
+  "version": "1.0.0",
+  "description": "Projeto do time 10 para o hackaton Sony Music da Shawee (23-24/03/2019).",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/majorsaaam/codestage-time10.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/majorsaaam/codestage-time10/issues"
+  },
+  "homepage": "https://github.com/majorsaaam/codestage-time10#readme"
+}
